@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			header,
+			section,
+			footer,
+			nav {
+				display: block;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			body {
+				font-size: 12px;
+			}
+			
+			img {
+				border: none;
+				display: block;
+			}
+			
+			html,
+			body {
+				height: 100%;
+			}
+			
+			@font-face {
+				font-family: "iconfont";
+				src: url('iconfont.eot?t=1548400329676');
+				/* IE9 */
+				src: url('iconfont.eot?t=1548400329676#iefix') format('embedded-opentype'), /* IE6-IE8 */
+				url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'), url('iconfont.woff?t=1548400329676') format('woff'), url('iconfont.ttf?t=1548400329676') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+				url('iconfont.svg?t=1548400329676#iconfont') format('svg');
+				/* iOS 4.1- */
+			}
+			
+			.iconfont {
+				font-family: "iconfont" !important;
+				font-size: 16px;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			.box {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				background: #2d2b3a;
+				overflow: hidden;
+			}
+			
+			.box>header {
+				width: 100%;
+				height: 36px;
+			}
+			
+			.box>header>ul {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.box>header>ul>li:nth-child(1) {
+				width: 62px;
+				line-height: 36px;
+				color: white;
+				font-size: 18px;
+				float: left;
+				position: absolute;
+				left: 44.5%;
+			}
+			
+			.box>header>ul>li:nth-child(2),
+			.box>header>ul>li:nth-child(3) {
+				width: 36px;
+				line-height: 36px;
+				float: right;
+			}
+			
+			.box>header>ul>li:nth-child(1) i {
+				color: #5c5a62;
+				font-size: 18px;
+			}
+			
+			.box>header>ul>li:nth-child(2) i,
+			.box>header>ul>li:nth-child(3) i {
+				color: white;
+				font-size: 18px;
+			}
+			
+			.box>nav {
+				width: 100%;
+				height: 62px;
+			}
+			
+			.box>nav>ul {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			
+			.box>nav>ul>li i {
+				font-size: 38px;
+				color: #37c7b8;
+			}
+			
+			.box>section {
+				width: 100%;
+				flex: 1;
+				overflow: auto;
+			}
+			
+			.box>section>ul {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			
+			.box>section>ul>li {
+				width: 352px;
+				height: 291px;
+				background: white;
+				border-radius: 10px;
+				margin-top: 10px;
+			}
+			
+			.box>section>ul>li>p {
+				height: 26px;
+				font-size: 18px;
+				line-height: 26px;
+				padding: 17px 0px 0px 17px;
+			}
+			
+			.box>section>ul>li>p i {
+				font-size: 27px;
+				color: #93c78f;
+			}
+			
+			.box>section>ul>li>ul {
+				display: flex;
+				flex-wrap: wrap;
+				margin-top: 50px;
+				justify-content: space-around;
+			}
+			
+			.box>section>ul>li:nth-child(1)>ul>li {
+				width: 150px;
+				height: 56px;
+			}
+			
+			.box>section>ul>li:nth-child(1)>ul>li i {
+				float: left;
+				font-size: 20px;
+				color: #d7ead9;
+			}
+			
+			.box>section>ul>li:nth-child(1)>ul>li>div {
+				float: right;
+				text-align: center;
+				margin-right: 40px;
+				font-size: 11px;
+				
+			}
+			.box>section>ul>li:nth-child(1)>ul>li>div>p:nth-child(2){
+				text-align: right;
+				color: #6c6c6c;
+			}
+			.box>section>ul>li:nth-child(1)>ul>li>div>p:nth-child(1){
+				font-size: 22px;
+				color: #868e9b;
+			}
+			.box>section>ul>li:nth-child(2)>ul>li{
+					margin-right:100px ;
+				}
+				.box>section>ul>li:nth-child(2)>ul>li>p:nth-child(1){
+					font-size: 20px;
+					font-weight: bold;
+				}
+				.box>section>ul>li:nth-child(2)>ul>li>div{
+					font-size: 15px;
+					margin-top:80px;
+					line-height: 20px;
+					color:#a9a9a9;
+					}
+			.box>footer {
+				width: 100%;
+				height: 51px;
+				background: #fff;
+				border: 1px solid #ededed;
+			}
+			.box>footer>ul{
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				
+			}
+			.box>footer>ul>li{
+				line-height: 26px;
+				
+				
+			}
+			.box>footer>ul>li i{
+				font-size: 23px;
+				color:#c5c5cc;
+			}
+			.box>footer>ul>li p{
+				color:#c5c5cc;
+				text-align: center;				
+			}
+			@media screen and (min-width: 760px){
+			.box>section>ul>li {
+				width: 352px;
+				height: 400px;
+				background: white;
+				border-radius: 10px;
+				margin: 10px;
+			}
+			@media screen and (min-width: 1000px){
+			.box>section>ul>li {
+				width: 352px;
+				height: 550px;
+				background: white;
+				border-radius: 10px;
+				margin: 40px;
+			}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<header>
+				<ul>
+					<li>CRM <i class="iconfont">&#xe68c;</i></li>
+					<li><i class="iconfont">&#xe62d;</i></li>
+					<li><i class="iconfont">&#xe6df;</i></li>
+				</ul>
+			</header>
+			<nav>
+				<ul>
+					<li><i class="iconfont" style="color:#f79b22;">&#xe735;</i></li>
+					<li><i class="iconfont" style="color:#516bcf;">&#xe71c;</i></li>
+					<li><i class="iconfont">&#xe713;</i></li>
+					<li><i class="iconfont" style="color:#436eeb;">&#xe715;</i></li>
+					<li><i class="iconfont" style="color:#353245;">&#xe70d;</i></li>
+				</ul>
+			</nav>
+			<section>
+				<ul>
+					<li>
+						<p><i class="iconfont">&#xe713;</i> 销售简报</p>
+						<ul>
+							<li>
+								<i class="iconfont">&#xe621;</i>
+								<div>
+									<p>33个</p>
+									<p>新增客户数</p>
+								</div>
+
+							</li>
+							<li>
+								<i class="iconfont">&#xe619;</i>
+								<div>
+									<p>22个</p>
+									<p>新增联系人</p>
+								</div>
+							</li>
+							<li>
+								<i class="iconfont">&#xe62e;</i>
+								<div>
+									<p>47个</p>
+									<p>新增商机数</p>
+								</div>
+							</li>
+							<li>
+								<i class="iconfont">&#xe624;</i>
+								<div>
+									<p>3个</p>
+									<p>阶段变化的商机</p>
+								</div>
+							</li>
+							<li>
+								<i class="iconfont">&#xe636;</i>
+								<div>
+									<p>3个/2次</p>
+									<p>拜访客户</p>
+								</div>
+							</li>
+							<li>
+								<i class="iconfont">&#xe638;</i>
+								<div>
+									<p>6条</p>
+									<p>新增销售记录</p>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p><i class="iconfont" style="color:#fac25a;">&#xe60f;</i> 遗忘客户提醒</p>
+						<ul>
+							<li>
+								<p>fk新建导入客户不许动哦</p>
+								<div>
+									<p>最后跟进时间</p>
+									<p>2017年09月11日</p>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li></li>
+					<li></li>
+				</ul>
+			</section>
+			<footer>
+				<ul>
+					<li>
+						<i class="iconfont">&#xe70d;</i>
+						<p>短息</p>
+					</li>
+					<li>
+						<i class="iconfont">&#xe713;</i>
+						<p>工作</p>
+					</li>
+					<li>
+						<i class="iconfont" style="color:#f79b22;">&#xe6c9;</i>
+						<p>业务</p>
+					</li>
+					<li>
+						<i class="iconfont">&#xe71c;</i>
+						<p>应用</p>
+					</li>
+					<li>
+						<i class="iconfont">&#xe715;</i>
+						<p>我</p>
+					</li>
+				</ul>
+			</footer>
+		</div>
+	</body>
+
+</html>
